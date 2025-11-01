@@ -18,10 +18,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "express-myconnection": "^1.0.4",
-    "morgan": "^1.10.1",
-    "mysql": "^2.18.1"
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.15.3"
   }
 }
