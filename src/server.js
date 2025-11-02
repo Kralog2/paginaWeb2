@@ -1,16 +1,14 @@
-import express from "express";
-import cookieParser from "cookie-parser";
-import dotenv from "dotenv";
-import path from "path";
-import { fileURLToPath } from "url";
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const dotenv = require("dotenv");
+const path = require("path");
+const expressLayouts = require("express-ejs-layouts");
 
-import authRoutes from "./routes/authRoutes.js";
-import mainRoutes from "./routes/mainRoutes.js";
+const authRoutes = require("./routes/authRoutes");
+const mainRoutes = require("./routes/mainRoutes");
 
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middleware
@@ -20,8 +18,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 // Motor de plantillas
+app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+app.set("layout", "layouts/main");
 
 // Rutas
 app.use("/", mainRoutes);
@@ -29,4 +29,6 @@ app.use("/auth", authRoutes);
 
 // Puerto
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Servidor corriendo en puerto ${PORT}`));
+app.listen(PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+});

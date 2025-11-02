@@ -1,8 +1,8 @@
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
-import { db } from "../config/db.js";
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const db = require("../config/db.js");
 
-export const login = async (req, res) => {
+const loginController = async (req, res) => {
   const { username, password } = req.body;
   const [rows] = await db.execute("SELECT * FROM users WHERE username = ?", [username]);
 
@@ -18,14 +18,20 @@ export const login = async (req, res) => {
   res.redirect("/dashboard");
 };
 
-export const register = async (req, res) => {
+const registerController = async (req, res) => {
   const { username, password } = req.body;
   const hash = await bcrypt.hash(password, 10);
   await db.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", [username, hash]);
   res.redirect("/login");
 };
 
-export const logout = (req, res) => {
+const logoutController = (req, res) => {
   res.clearCookie("token");
   res.redirect("/login");
+};
+
+module.exports = {
+  loginController,
+  registerController,
+  logoutController
 };

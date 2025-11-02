@@ -1,6 +1,6 @@
-import jwt from "jsonwebtoken";
+const jwt = require("jsonwebtoken");
 
-export const verifyToken = (req, res, next) => {
+const verifyToken = (req, res, next) => {
   const token = req.cookies.token;
   if (!token) return res.redirect("/login");
 
@@ -12,3 +12,5 @@ export const verifyToken = (req, res, next) => {
     res.redirect("/login");
   }
 };
+
+module.exports = verifyToken;
