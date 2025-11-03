@@ -9,5 +9,6 @@ CREATE TABLE IF NOT EXISTS users (
     name VARCHAR(100) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(100) NOT NULL,
+    role ENUM('user', 'admin') NOT NULL DEFAULT 'user',
     registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );

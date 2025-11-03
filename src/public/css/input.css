@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Estilos globales personalizados */
+body {
+  background-color: #202020;
+  color: aliceblue;
+}
+
+h1,
+h2,
+h3 {
+  font: bold;
+  color: aliceblue;
+}
+a {
+  @apply text-gray-200 hover:text-blue-500;
+}
