@@ -10,7 +10,7 @@
       <li><a href="/auth/login" class="hover:text-blue-400">Login</a></li>
     <% } else { %>
       <!-- Logueado -->
-      <% if (user.userType === "admin") { %>
+      <% if (user.role === "admin") { %>
         <li><a href="/dashboard/adminpage" class="hover:text-blue-400">Admin</a></li>
       <% } %>
       <li><a href="/dashboard/user" class="hover:text-blue-400">Perfil</a></li>

@@ -3,28 +3,28 @@ const jwt = require("jsonwebtoken");
 const db = require("../config/db.js");
 
 const showRegister = (req, res) => {
-  res.render("pages/register", { title: "Registro", error: null });
+  res.render("auth/register", { title: "Registro", error: null });
 };
 
 const registerUser = async (req, res) => {
-  const { fullname, email, password, userType} = req.body;
+  const { name, email, password, role} = req.body;
   try {
     const [existingUsers] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
     if (existingUsers.length > 0) {
-      return res.render("pages/register", {
+      return res.render("auth/register", {
         title: "Registro",
         error: "El correo electrónico ya está registrado",
       });
     }
     const hashedPassword = await bcrypt.hash(password, 10);
     await db.query(
-      "INSERT INTO users (fullname, email, password, userType) VALUES (?, ?, ?, ?)",
-      [fullname, email, hashedPassword, userType]
+      "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)",
+      [name, email, hashedPassword, role]
     );
     res.redirect("/auth/login");
   } catch (error) {
     console.error(error);
-    res.render("pages/register", {
+    res.render("auth/register", {
       title: "Registro",
       error: "Error del servidor",
     });
@@ -32,7 +32,7 @@ const registerUser = async (req, res) => {
 };
 
 const showLogin = (req, res) => {
-  res.render("pages/login", { title: "Iniciar sesión", error: null });
+  res.render("auth/login", { title: "Iniciar sesión", error: null });
 };
 
 const loginUser = async (req, res) => {
@@ -41,18 +41,18 @@ const loginUser = async (req, res) => {
   try {
     const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
     if (users.length === 0) {
-      return res.render("pages/login", {
+      return res.render("auth/login", {
         title: "Iniciar sesión",
-        error: "Usuario no encontrado",
+        error: "Correo electrónico o contraseña incorrectos",
       });
     }
     const user = users[0];
 
     const match = await bcrypt.compare(password, user.password);
     if (!match) {
-      return res.render("pages/login", {
+      return res.render("auth/login", {
         title: "Iniciar sesión",
-        error: "Contraseña incorrecta",
+        error: "Correo electrónico o contraseña incorrectos",
       });
     }
 

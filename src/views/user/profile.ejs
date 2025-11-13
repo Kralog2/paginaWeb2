@@ -1,0 +1,16 @@
+<div class="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg mt-10 text-white">
+    <h1 class="text-2xl font-bold mb-4">Perfil de Usuario</h1>
+
+    <p><strong>Nombre:</strong> <%= user.name %></p>
+    <p><strong>Correo:</strong> <%= user.email %></p>
+    <p><strong>Rol:</strong> <%= user.role %></p>
+    <p><strong>Registrado el:</strong> <%= user.registered_at.toLocaleDateString() %></p>
+
+    <div class="mt-6 flex gap-4">
+        <a href="/profile/edit" class="bg-blue-600 py-2 px-4 rounded hover:bg-blue-700">Editar Perfil</a>
+
+        <a href="/profile/delete-confirm" class="bg-red-600 py-2 px-4 rounded hover:bg-red-700">
+            Eliminar Cuenta
+        </a>
+    </div>
+</div>
