@@ -634,6 +634,10 @@ video {
   margin-top: 1.25rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -664,6 +668,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[450px\] {
+  width: 450px;
 }
 
 .cursor-pointer {
