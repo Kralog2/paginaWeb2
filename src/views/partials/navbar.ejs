@@ -7,7 +7,7 @@
     <% if (!user) { %>
       <!-- No logueado -->
       <li><a href="/register" class="hover:text-blue-400">Registrarse</a></li>
-      <li><a href="/login" class="hover:text-blue-400">Login</a></li>
+      <li><a href="/auth/login" class="hover:text-blue-400">Login</a></li>
     <% } else { %>
       <!-- Logueado -->
       <% if (user.userType === "admin") { %>

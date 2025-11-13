@@ -2,36 +2,54 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const db = require("../config/db.js");
 
-const loginController = async (req, res) => {
-  const { username, password } = req.body;
-  const [rows] = await db.execute("SELECT * FROM users WHERE username = ?", [username]);
-
-  if (rows.length === 0) return res.render("login", { error: "Usuario no encontrado" });
-
-  const user = rows[0];
-  const valid = await bcrypt.compare(password, user.password_hash);
-
-  if (!valid) return res.render("login", { error: "Contraseña incorrecta" });
-
-  const token = jwt.sign({ id: user.id, username: user.username }, process.env.JWT_SECRET, { expiresIn: "1h" });
-  res.cookie("token", token, { httpOnly: true });
-  res.redirect("/dashboard");
+const showLogin = (req, res) => {
+  res.render("pages/login", { title: "Iniciar sesión", error: null });
 };
 
-const registerController = async (req, res) => {
-  const { username, password } = req.body;
-  const hash = await bcrypt.hash(password, 10);
-  await db.execute("INSERT INTO users (username, password_hash) VALUES (?, ?)", [username, hash]);
-  res.redirect("/login");
+const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const [users] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
+    if (users.length === 0) {
+      return res.render("pages/login", {
+        title: "Iniciar sesión",
+        error: "Usuario no encontrado",
+      });
+    }
+    const user = users[0];
+
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      return res.render("pages/login", {
+        title: "Iniciar sesión",
+        error: "Contraseña incorrecta",
+      });
+    }
+
+    const token = jwt.sign(
+      { id: user.id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
+    );
+    res.cookie("token", token, { httpOnly: true });
+    res.redirect("/profile");
+  } catch (error) {
+    console.error(error);
+    res.render("pages/login", {
+      title: "Iniciar sesión",
+      error: "Error del servidor",
+    });
+  }
 };
 
-const logoutController = (req, res) => {
+const logoutUser = (req, res) => {
   res.clearCookie("token");
   res.redirect("/login");
 };
 
 module.exports = {
-  loginController,
-  registerController,
-  logoutController
+  showLogin,
+  loginUser,
+  logoutUser
 };
