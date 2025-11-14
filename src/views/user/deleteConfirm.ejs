@@ -1,0 +1,29 @@
+<div class="max-w-lg mx-auto bg-gray-800 p-8 rounded-xl mt-20 text-white shadow-xl border border-gray-700">
+    
+    <h1 class="text-3xl font-bold mb-6 text-center text-red-400">
+        ¿Eliminar Cuenta?
+    </h1>
+
+    <p class="text-center text-gray-300 mb-8 text-lg">
+        Esta acción <span class="font-bold text-red-500">no se puede deshacer</span>.
+        Se eliminará tu cuenta y todos tus datos permanentemente.
+    </p>
+
+    <div class="flex flex-col sm:flex-row gap-5 mt-6">
+
+        <a href="/user/profile"
+           class="flex-1 bg-gray-600 py-3 rounded-lg text-center font-semibold hover:bg-gray-700 transition">
+            Cancelar
+        </a>
+
+        <form action="/user/profile/delete-account" method="POST" class="flex-1">
+            <button 
+                type="submit"
+                class="w-full bg-red-600 py-3 rounded-lg font-semibold hover:bg-red-700 transition">
+                Sí, eliminar mi cuenta
+            </button>
+        </form>
+
+    </div>
+
+</div>

@@ -7,7 +7,7 @@ const showRegister = (req, res) => {
 };
 
 const registerUser = async (req, res) => {
-  const { name, email, password, role} = req.body;
+  const { name, email, password, role = "user" } = req.body;
   try {
     const [existingUsers] = await db.query("SELECT * FROM users WHERE email = ?", [email]);
     if (existingUsers.length > 0) {
@@ -21,10 +21,10 @@ const registerUser = async (req, res) => {
       "INSERT INTO users (name, email, password, role) VALUES (?, ?, ?, ?)",
       [name, email, hashedPassword, role]
     );
-    res.redirect("/auth/login");
+    return res.redirect("/auth/login");
   } catch (error) {
     console.error(error);
-    res.render("auth/register", {
+    return res.render("auth/register", {
       title: "Registro",
       error: "Error del servidor",
     });
@@ -57,15 +57,21 @@ const loginUser = async (req, res) => {
     }
 
     const token = jwt.sign(
-      { id: user.id, email: user.email },
+      { id: user.id, name: user.name, email: user.email, role: user.role },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "7d" }
     );
-    res.cookie("token", token, { httpOnly: true });
-    res.redirect("/profile");
+
+    res.cookie("token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "lax",
+    });
+
+    return res.redirect("/user/profile");
   } catch (error) {
     console.error(error);
-    res.render("pages/login", {
+    return res.render("auth/login", {
       title: "Iniciar sesión",
       error: "Error del servidor",
     });
@@ -74,7 +80,7 @@ const loginUser = async (req, res) => {
 
 const logoutUser = (req, res) => {
   res.clearCookie("token");
-  res.redirect("/login");
+  return res.redirect("/auth/login");
 };
 
 module.exports = {
@@ -82,5 +88,5 @@ module.exports = {
   loginUser,
   showRegister,
   registerUser,
-  logoutUser
+  logoutUser,
 };
