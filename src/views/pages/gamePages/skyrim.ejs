@@ -1,0 +1,581 @@
+<% title = "Skyrim" %>
+<div
+  class="border-t-4 max-w-6xl mx-auto bg-gray-800 p-8 rounded-xl mt-12 text-white shadow-lg border-blue-500"
+>
+  <h1 class="text-4xl font-bold mb-8 text-center text-white">
+    Guía de Modding de Skyrim
+  </h1>
+
+  <section class="mb-8">
+    <h2 class="text-3xl font-semibold text-red-400 mb-2">Advertencia</h2>
+    <div class="bg-red-900 bg-opacity-60 p-4 rounded mb-2">
+      <p class="text-justify">
+        Para modear juegos es necesario ser mayor de edad debido a contenido
+        NSFW y tener conocimientos básicos de informática, ya que algunos mods
+        pueden causar problemas en el juego o en el sistema.
+      </p>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-blue-300 mb-2">Requisitos</h2>
+    <ul class="list-disc ml-6 space-y-1">
+      <li>Skyrim Special Edition (recomendado)</li>
+      <li>
+        Gestor de mods: <span class="font-semibold">Vortex</span> o
+        <span class="font-semibold">Mod Organizer 2</span>
+      </li>
+      <li>
+        <a href="https://loot.github.io/" class="text-blue-400 underline"
+          >LOOT</a
+        >
+        (para ordenar los mods)
+      </li>
+      <li>
+        <a href="http://skse.silverlock.org/" class="text-blue-400 underline"
+          >SKSE64</a
+        >
+        (Skyrim Script Extender)
+      </li>
+    </ul>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-blue-300 mb-2">
+      Pasos para instalar mods
+    </h2>
+    <ol class="list-decimal ml-6 space-y-2">
+      <li>
+        Descarga e instala un gestor de mods como
+        <a href="https://www.nexusmods.com/" class="text-blue-400 underline"
+          >Vortex</a
+        >
+        o
+        <a href="https://www.nexusmods.com/" class="text-blue-400 underline"
+          >Mod Organizer 2</a
+        >.
+      </li>
+      <li>
+        Descarga
+        <a href="https://loot.github.io/" class="text-blue-400 underline"
+          >LOOT</a
+        >
+        para ordenar los mods y evitar conflictos.
+      </li>
+      <li>
+        Descarga e instala
+        <a href="http://skse.silverlock.org/" class="text-blue-400 underline"
+          >SKSE64</a
+        >
+        para mejorar la funcionalidad del juego.
+      </li>
+      <li>
+        Busca mods en sitios confiables como
+        <a href="https://www.nexusmods.com/" class="text-blue-400 underline"
+          >Nexus Mods</a
+        >.
+      </li>
+      <li>
+        Usa el gestor de mods para instalar y activar los mods descargados.
+      </li>
+      <li>Utiliza LOOT para ordenar los mods correctamente.</li>
+      <li>
+        Inicia el juego a través del gestor de mods para asegurarte de que todo
+        funcione correctamente.
+      </li>
+    </ol>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-green-400 mb-4">Mods esenciales</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          Unofficial Skyrim Special Edition Patch
+        </h3>
+        <p class="mb-2 text-sm">
+          Corrige cientos de errores del juego base y es fundamental para
+          cualquier instalación de mods.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/266"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          SKSE64 (Skyrim Script Extender)
+        </h3>
+        <p class="mb-2 text-sm">
+          Permite que muchos mods funcionen al ampliar las capacidades de los
+          scripts del juego.
+        </p>
+        <a href="http://skse.silverlock.org/" class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          SSE Engine Fixes (skse64 plugin)
+        </h3>
+        <p class="mb-2 text-sm">
+          Soluciona problemas de rendimiento y estabilidad, recomendado para
+          evitar crashes.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/17245"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">SkyUI</h3>
+        <p class="mb-2 text-sm">
+          Mejora la interfaz de usuario del inventario y menús, haciéndolos más
+          intuitivos y modernos.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/3863"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          Address Library for SKSE Plugins
+        </h3>
+        <p class="mb-2 text-sm">
+          Requerido por muchos plugins SKSE para funcionar correctamente tras
+          actualizaciones del juego.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/32444"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">RaceMenu</h3>
+        <p class="mb-2 text-sm">
+          Permite una personalización avanzada de personajes y es requerido por
+          muchos mods de apariencia.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/29624"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">Immersive Armors</h3>
+        <p class="mb-2 text-sm">
+          Agrega una gran variedad de armaduras nuevas, integradas de forma
+          inmersiva en el juego.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/19733"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          SMIM (Static Mesh Improvement Mod)
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora la calidad visual de los objetos estáticos en el mundo de
+          Skyrim.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/8655"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-blue-300">
+          Save and Load Accelerator for SKSE Cosaves - S.L.A.C.K.
+        </h3>
+        <p class="mb-2 text-sm">
+          Optimiza los tiempos de guardado y carga, especialmente útil en
+          partidas con muchos mods.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/163969"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-yellow-400 mb-4">
+      Mods recomendados
+    </h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Apocalypse - Magic of Skyrim
+        </h3>
+        <p class="mb-2 text-sm">
+          Añade más de 150 nuevos hechizos equilibrados y únicos para magos.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/1622"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          BodySlide and Outfit Studio
+        </h3>
+        <p class="mb-2 text-sm">
+          Herramienta para personalizar cuerpos y ropa, compatible con CBBE y
+          otros mods de apariencia.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/497"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Caliente's Beautiful Bodies Enhancer (CBBE)
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora los modelos de cuerpo femenino y es base para muchos mods de
+          ropa y apariencia.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/2666"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Enhanced Blood Textures
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora los efectos de sangre para hacerlos más realistas y variados.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/1725"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Gunslicer Animations All in One OAR - NPCs Patch
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora las animaciones de los personajes femeninos del jugador.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/124321"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Immersive Citizens - AI Overhaul
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora la inteligencia artificial de los NPCs para hacerlos más
+          realistas y reactivos.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/173"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div>
+        <div class="bg-gray-900 p-4 rounded shadow">
+          <h3 class="font-bold text-lg text-yellow-300">
+            NAT.CS III - City and Town Overhaul
+          </h3>
+          <p class="mb-2 text-sm">
+            Mejora la apariencia y el diseño de las ciudades y pueblos de
+            Skyrim, utiliza algunas dependencias de shader ENB.
+          </p>
+          <a
+            href="https://www.nexusmods.com/skyrimspecialedition/mods/139567"
+            class="text-blue-400 underline"
+            >Descargar</a
+          >
+        </div>
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">KS Hairdos</h3>
+        <p class="mb-2 text-sm">
+          Agrega cientos de nuevos estilos de cabello para personajes masculinos
+          y femeninos.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/17245"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          Pandora Behavior Engine Plus
+        </h3>
+        <p class="mb-2 text-sm">
+          Mejora las animaciones y comportamientos de los personajes, compatible
+          con otros mods de animación.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/133232"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">Realistic Water Two</h3>
+        <p class="mb-2 text-sm">
+          Mejora los efectos visuales y el comportamiento del agua en el juego.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/2182"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">Vivid Weathers</h3>
+        <p class="mb-2 text-sm">
+          Agrega nuevos efectos climáticos y mejora la atmósfera visual de
+          Skyrim.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/3044"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-yellow-300">
+          XP32 Maximum Skeleton Special Extended
+        </h3>
+        <p class="mb-2 text-sm">
+          Permite compatibilidad con animaciones avanzadas y mods de movimiento.
+        </p>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/11811"
+          class="text-blue-400 underline"
+          >Descargar</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-purple-400 mb-4">
+      Creadores favoritos de Nexus
+    </h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-purple-300">
+          Mods de Apariencia y Modelos
+        </h3>
+        <ul class="list-disc ml-6">
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/AshtorethH?gameId=1704"
+              class="text-blue-400 underline"
+              >AshtorethH</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.nexusmods.com/games/skyrimspecialedition/mods?keyword=COCO&sort=endorsements"
+              class="text-blue-400 underline"
+              >COCO</a
+            >
+            <span class="text-xs text-gray-400"
+              >(mods de cuerpos y ropa, no tiene pagina de perfil pero puedes
+              encontrar sus mods en paginas web y foros de la comunidad)</span
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Caenarvon?gameId=1704"
+              class="text-blue-400 underline"
+              >Caenarvon</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/DarkDukla?gameId=1704"
+              class="text-blue-400 underline"
+              >DarkDukla</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Daymarr?gameId=1704"
+              class="text-blue-400 underline"
+              >Daymarr</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/DeserterX?gameId=1704"
+              class="text-blue-400 underline"
+              >DeserterX</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Ellxe?gameId=1704"
+              class="text-blue-400 underline"
+              >EllE</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Wartom94?gameId=1704"
+              class="text-blue-400 underline"
+              >Wartom94</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/ZhizhenCong?gameId=1704"
+              class="text-blue-400 underline"
+              >ZhizhenCong</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-purple-300">
+          Mods de Jugabilidad y Animaciones
+        </h3>
+        <ul class="list-disc ml-6">
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/contentcat?gameId=1704"
+              class="text-blue-400 underline"
+              >contentcat</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Gunslicer?gameId=1704"
+              class="text-blue-400 underline"
+              >Gunslicer</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/lSmoothl/mods?gameId=1704"
+              class="text-blue-400 underline"
+              >lSmoothl</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Kittytail?gameId=1704"
+              class="text-blue-400 underline"
+              >Kittytail</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/LilBadJj?gameId=1704"
+              class="text-blue-400 underline"
+              >LilBadJj</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/PSBoss?gameId=1704"
+              class="text-blue-400 underline"
+              >PSBoss</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/SonderBain?gameId=1704"
+              class="text-blue-400 underline"
+              >SonderBain</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Verolevi?gameId=1704"
+              class="text-blue-400 underline"
+              >Verolevi</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-purple-300">
+          Traducción de Mods al español
+        </h3>
+        <ul class="list-disc ml-6">
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/supercento?gameId=1704"
+              class="text-blue-400 underline"
+              >Supercento</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="bg-gray-900 p-4 rounded shadow">
+        <h3 class="font-bold text-lg text-purple-300">
+          Mods de Entornos y Gráficos
+        </h3>
+        <ul class="list-disc ml-6">
+          <li>
+            <a
+              href="https://next.nexusmods.com/profile/Archinatic?gameId=1704"
+              class="text-blue-400 underline"
+              >Archinatic</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-8">
+    <h2 class="text-2xl font-semibold text-pink-400 mb-4">
+      Recursos adicionales
+    </h2>
+    <ul class="list-disc ml-6">
+      <li>
+        <a
+          href="https://www.nexusmods.com/skyrimspecialedition/mods/1737"
+          class="text-blue-400 underline"
+          >Guía de modding en Nexus Mods</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.reddit.com/r/skyrimmods/"
+          class="text-blue-400 underline"
+          >Foro de modding de Skyrim en Reddit</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/user/gophersvsthegames"
+          class="text-blue-400 underline"
+          >Canal de YouTube: Gopher</a
+        >
+      </li>
+    </ul>
+  </section>
+</div>

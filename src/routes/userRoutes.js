@@ -27,4 +27,17 @@ router.post("/profile/delete-account", verifyToken, async (req, res) => {
   }
 });
 
+router.get("/gamePages/skyrim", verifyToken, (req, res) => {
+  res.render("pages/gamePages/skyrim", { title: "Skyrim", user: req.user });
+});
+router.get("/gamePages/fallout4", verifyToken, (req, res) => {
+  res.render("pages/gamePages/fallout4", { title: "Fallout 4", user: req.user });
+});
+router.get("/gamePages/falloutnv", verifyToken, (req, res) => {
+  res.render("pages/gamePages/falloutnv", { title: "Fallout New Vegas", user: req.user });
+});
+router.get("/gamePages/kofxv", verifyToken, (req, res) => {
+  res.render("pages/gamePages/kofxv", { title: "The King of Fighters XIV", user: req.user });
+});
+
 module.exports = router;
