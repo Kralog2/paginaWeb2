@@ -24,4 +24,16 @@ exports.create = async ({ name, email, password, role }) => {
     [name, email, password, role]
   );
 };
+exports.searchByNameOrEmail = async (search) => {
+    const [rows] = await pool.query(
+        'SELECT * FROM users WHERE name LIKE ? OR email LIKE ?',
+        [`%${search}%`, `%${search}%`]
+    );
+    return rows;
+};
+
+exports.filterByRole = async (role) => {
+    const [rows] = await pool.query('SELECT * FROM users WHERE role = ?', [role]);
+    return rows;
+};
 
